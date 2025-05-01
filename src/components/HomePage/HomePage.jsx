@@ -26,11 +26,13 @@ export default function HomePage() {
     <div>
       <div className="px-6 md:px-10">
         <header className="flex flex-wrap justify-between items-center py-6 font-semibold">
-          <img
-            src="https://themewagon.github.io/mellow/images/main-logo.png"
-            alt="main-logo"
-            className="h-12"
-          />
+          <Link to={"/"}>
+            <img
+              src="https://themewagon.github.io/mellow/images/main-logo.png"
+              alt="main-logo"
+              className="h-12"
+            />
+          </Link>
           <nav className="flex gap-6 items-center">
             <Link
               to={"/"}
