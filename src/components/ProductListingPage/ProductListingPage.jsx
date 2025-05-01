@@ -16,11 +16,14 @@ import ProductCard from "../ProductCard/ProductCard";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import MiniCart from "../MiniCart/MiniCart";
 
+let updatedArr = [];
+
 export default function ProductListingPage() {
   const [productsArr, setProductsArr] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [isMiniCartOpen, setIsMiniCartOpen] = useState(false);
+  const [inputText, setInputText] = useState("");
 
   const fetchedData = async () => {
     try {
@@ -44,6 +47,10 @@ export default function ProductListingPage() {
     setIsMiniCartOpen(!isMiniCartOpen);
   };
 
+  const handleSearchText = (e) => {
+    setInputText(e.target.value);
+  };
+
   if (loading) {
     // loading spinner while data is being fetched
     return (
@@ -56,6 +63,15 @@ export default function ProductListingPage() {
   if (error) {
     // ErrorPage if an error occurs
     return <ErrorPage />;
+  }
+
+  // product search functionality
+  if (updatedArr.length === 0) {
+    updatedArr = productsArr;
+  } else {
+    updatedArr = productsArr.filter((products) =>
+      products.title.toLowerCase().includes(inputText)
+    );
   }
 
   return (
@@ -106,8 +122,19 @@ export default function ProductListingPage() {
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
               All Products
             </h2>
+
+            <div className="flex justify-center my-4">
+              <input
+                type="search"
+                placeholder="Search..."
+                value={inputText}
+                onChange={handleSearchText}
+                className="w-84 px-4 py-2 border border-gray-300 rounded-lg shadow-sm"
+              />
+            </div>
+
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {productsArr.map((item) => (
+              {updatedArr.map((item) => (
                 <li key={item.id}>
                   <ProductCard item={item} />
                 </li>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 import HomePage from "./components/HomePage/HomePage";
@@ -7,7 +7,14 @@ import MyContext from "./Context/MyContext";
 import FullCartPage from "./components/FullCartPage/FullCartPage";
 
 function App() {
-  const [cartList, setCartList] = useState([]);
+  // initialize cartList
+  const cart = localStorage.getItem("cartList");
+  const [cartList, setCartList] = useState(cart ? JSON.parse(cart) : []);
+
+  // keeping in local storage whenever cartList
+  useEffect(() => {
+    localStorage.setItem("cartList", JSON.stringify(cartList));
+  }, [cartList]);
 
   const addToCart = (item) => {
     setCartList([...cartList, { ...item, quantity: 1 }]);
