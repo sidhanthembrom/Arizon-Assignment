@@ -7,7 +7,7 @@ GITHUB Repo URL :- https://github.com/sidhanthembrom/Arizon-Assignment
 Setup Instructions :-
 1. Clone the repository and change directory
 2. Run "npm install"
-3. npm run dev
+3. Run "npm run dev"
 
 A brief Approach :-
 I approached the assignment by focusing on building a modular, responsive, and user-friendly e-commerce frontend using React.js, JavaScript, and Tailwind CSS, adhering to the requirements while maintaining clean code practices.

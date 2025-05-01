@@ -92,13 +92,13 @@ export default function FullCartPage() {
       </div>
       <hr className="my-8 border-gray-300" />
       <div className="flex justify-between">
-        <Link to={"/products"} className="w-1/2 md:w-auto">
-          <button className="bg-orange-500 text-white py-2 px-4 rounded-md font-semibold hover:cursor-pointer">
+        <Link to={"/products"} className="md:w-auto">
+          <button className="bg-orange-500 text-white py-2 px-2 md:px-4 rounded-md font-semibold hover:cursor-pointer">
             Go to Products Page
           </button>
         </Link>
-        <Link to={"/cart"} className="w-1/2 md:w-auto">
-          <button className="bg-green-500 text-white py-2 px-4 rounded-md font-semibold hover:cursor-pointer">
+        <Link to={"/cart"} className="md:w-auto">
+          <button className="bg-green-500 text-white py-2 px-2 md:px-4 rounded-md font-semibold hover:cursor-pointer">
             Proceed to Checkout
           </button>
         </Link>
