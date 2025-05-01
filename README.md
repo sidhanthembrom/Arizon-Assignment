@@ -1,12 +1,32 @@
-# React + Vite
+About Project :-
+It's an e-commerce project called "Mellow E-commerce" which majorly focuses on frontend. I have used React, Javascript and Tailwind CSS.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Setup Instructions :-
+1. Clone the repository and change directory
+2. Run "npm install"
+3. npm run dev
 
-Currently, two official plugins are available:
+A brief Approach :-
+I approached the assignment by focusing on building a modular, responsive, and user-friendly e-commerce frontend using React.js, JavaScript, and Tailwind CSS, adhering to the requirements while maintaining clean code practices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Project Structure & Routing
+I implemented it with React.js and React Router to manage navigation between the Home, Product Listing, and Cart pages.
 
-## Expanding the ESLint configuration
+2. UI & Styling
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The layout and responsiveness were achieved using Tailwind CSS.
+I closely followed the reference design from Sample Website to create a modern and consistent UI, including header, hero section, and footer.
+
+3. Product Data Fetching
+
+Product data was fetched from the public API, Fake Store API using fetch inside useEffect.
+Loading and error states were handled to improve UX.
+
+4. State Management
+
+Used React Context API to manage global cart state, including add, remove, and update quantity operations.
+
+5. Mini Cart & Full Cart Pages
+
+Mini cart is shown as a dropdown from the cart icon and displays current cart items with subtotal.
+Full cart page includes quantity controls, remove buttons, and an order summary with calculated totals.
